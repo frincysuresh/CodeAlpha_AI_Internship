@@ -1,1 +1,1 @@
-streamlit\ndeep-translator\n
+streamlit\nscikit-learn\n
