@@ -1,1 +1,26 @@
-
+[
+  {
+    "question": "What is Python?",
+    "answer": "Python is a beginner-friendly, high-level programming language known for its readable syntax."
+  },
+  {
+    "question": "What is a loop in Python?",
+    "answer": "A loop is used to repeat a block of code multiple times."
+  },
+  {
+    "question": "What is a variable?",
+    "answer": "A variable is used to store data in Python."
+  },
+  {
+    "question": "What is a function?",
+    "answer": "A function is a reusable block of code."
+  },
+  {
+    "question": "What is a list?",
+    "answer": "A list is a collection of items stored in one variable."
+  },
+  {
+    "question": "How do you print Hello in Python?",
+    "answer": "Use print(). For example: print('Hello')"
+  }
+]
