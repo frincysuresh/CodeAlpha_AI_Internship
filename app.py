@@ -41,7 +41,7 @@ if user_question:
     best_index = scores.argmax()
     confidence = float(scores[best_index])
 
-    if confidence < 0.35:
+    if confidence < 0.50:
         response = "Sorry, I don't have a close FAQ match. Try asking about Python basics."
     else:
         response = answers[best_index]
