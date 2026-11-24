@@ -47,6 +47,6 @@ if st.button("Translate"):
             st.success(result)
 
         except Exception as e:
-            st.error("Translation failed. Please try again.")
+            st.error(f"Translation failed:{e}")
 
 st.caption("Powered by Google Translate through deep-translator.")
