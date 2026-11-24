@@ -1,5 +1,5 @@
 import streamlit as st
-from deep_translator import GoogleTranslator
+import requests
 
 st.set_page_config(
     page_title="Language Translation Tool",
@@ -38,15 +38,30 @@ if st.button("Translate"):
         st.warning("Please select two different languages.")
     else:
         try:
-            result = GoogleTranslator(
-                source=languages[source],
-                target=languages[target]
-            ).translate(text)
+            url = "https://api.mymemory.translated.net/get"
 
-            st.subheader("Translation")
-            st.success(result)
+            response = requests.get(
+                url,
+                params={
+                    "q": text,
+                    "langpair": f"{languages[source]}|{languages[target]}"
+                },
+                timeout=20
+            )
 
-        except Exception as e:
-            st.error(f"Translation failed:{e}")
+            response.raise_for_status()
+            data = response.json()
 
-st.caption("Powered by Google Translate through deep-translator.")
+            if data.get("responseStatus") == 200:
+                st.subheader("Translation")
+                st.success(data["responseData"]["translatedText"])
+            else:
+                st.error("Translation service is temporarily unavailable.")
+
+        except requests.exceptions.RequestException:
+            st.error("Unable to connect to the translation server. Please try again.")
+
+        except (KeyError, ValueError):
+            st.error("Unable to process the translation. Please try again.")
+
+st.caption("Powered by MyMemory Translation API.")
