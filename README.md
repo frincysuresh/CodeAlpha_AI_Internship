@@ -1,30 +1,24 @@
-# CodeAlpha FAQ Chatbot
+# Language Translation Tool
 
-A lightweight FAQ chatbot for Python basics. It compares the user's question with prepared FAQs using TF-IDF and cosine similarity, then returns the closest answer.
+A simple web-based language translation application built using Python and Streamlit.
 
 ## Features
-- Chat-style interface
-- FAQ dataset
-- Text vectorization (TF-IDF)
-- Similarity matching (cosine similarity)
-- Unknown-question fallback
-- Clear chat button
+- Translate text between different languages.
+- Select source and target languages.
+- Supports English, Hindi, Kannada, Tamil, Telugu, Malayalam, French, Spanish, German and Japanese.
+- Displays translated text instantly.
 
-## Setup
-1. Install Python 3.10+.
-2. Open terminal in this folder.
-3. Create environment (optional): `python -m venv .venv`
-4. Activate it:
-   - Windows: `.venv\\Scripts\\activate`
-   - macOS/Linux: `source .venv/bin/activate`
-5. Install packages: `pip install -r requirements.txt`
-6. Run: `streamlit run app.py`
+## Technologies Used
+- Python
+- Streamlit
+- Deep Translator
 
-## Test checklist
-- Ask: "What is Python?"
-- Ask: "Explain loops"
-- Ask an unrelated question and check fallback
-- Clear conversation and confirm messages reset
+## Installation
 
-## Internship repository name
-`CodeAlpha_FAQChatbot`
+Install the required packages:
+
+pip install -r requirements.txt
+
+## Run the Application
+
+streamlit run app.py
